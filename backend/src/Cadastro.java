@@ -1,7 +1,26 @@
+import java.util.Scanner;
+
 public class Cadastro {
 
+    private Scanner scanner;
+
+    public Cadastro(Scanner scanner) {
+        this.scanner = scanner;
+    }
     public void cadastrar() {
-        System.out.println("Cadastrando usuario...");
+
+        String nome;
+
+      while (true){
+        System.out.println("Digite o nome: ");
+        nome = scanner.nextLine();
+
+        if (!nome.isBlank()) {
+            System.out.println("Cadastrando usuario: " + nome);
+            break;
+        }
+        else System.out.println("Nome invalido. Tente novamente.");
+      }
     }
     public void listar() {
         System.out.println("Pegue a lista chefe...");
