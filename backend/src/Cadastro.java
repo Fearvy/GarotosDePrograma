@@ -3,16 +3,22 @@ import java.util.ArrayList;
 
 public class Cadastro {
 
-    private Scanner scanner;
-    private ArrayList<Usuario> usuarios = new ArrayList<>();
+    private final Scanner scanner;
+    private final ArrayList<Usuario> usuarios = new ArrayList<>();
     private int proximoId = 1;
 
     public Cadastro(Scanner scanner) {
 
         this.scanner = scanner;
+
+        usuarios.add(new Usuario(proximoId++, "Norbit"));
+        usuarios.add(new Usuario(proximoId++, "Fernanda"));
+        usuarios.add(new Usuario(proximoId++, "Davi"));
+        usuarios.add(new Usuario(proximoId++, "Arthur"));
+
     }
 
-    public void cadastrar() {
+    public void signUp() {
 
         String nome;
 
@@ -60,17 +66,25 @@ public class Cadastro {
 
         int id = scanner.nextInt();
 
+        Usuario usuarioEncontrado = null;
+
         for (Usuario usuario : usuarios) {
 
             if (usuario.id == id) {
 
-                System.out.print(usuario.nome + " obliterado ^0^");
-                usuarios.remove(usuario);
+                usuarioEncontrado = usuario;
                 break;
-            } else {
-                System.out.println("ACERTA O ID PORRA"); /*tem que ajustar isso, ta com erro*/
             }
-
         }
+
+        if (usuarioEncontrado!=null){
+
+            System.out.println(usuarioEncontrado.nome + " obliterado ^0^");
+            usuarios.remove(usuarioEncontrado);
+
+        } else {
+            System.out.println("ACERTA O ID PORRA"); /*tem que ajustar isso, ta com erro*/
+        }
+
     }
 }

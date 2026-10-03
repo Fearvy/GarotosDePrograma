@@ -5,8 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Cadastro cadastro = new Cadastro(scanner);;
-
+        Cadastro cadastro = new Cadastro(scanner);
 
         int opcao = -1;
 
@@ -25,7 +24,7 @@ public class Main {
             switch (opcao) {
                 case 1:
                     scanner.nextLine();
-                    cadastro.cadastrar();
+                    cadastro.signUp();
                     break;
 
                 case 2:
@@ -54,4 +53,5 @@ public class Main {
         scanner.close();
 
     }
+
 }
