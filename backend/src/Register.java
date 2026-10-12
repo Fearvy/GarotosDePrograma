@@ -34,7 +34,7 @@ public class Register {
                 users.add(user);
                 proximoId++;
 
-                System.out.print("Cadastrando usuario: " + name);
+                System.out.println("Cadastrando usuario: " + name);
                 break;
             } else {
                 System.out.println("Nome invalido. Tente novamente.");
@@ -57,16 +57,48 @@ public class Register {
     }
 
     public void edit() {
+        System.out.print("Digite o ID a ser alterado: ");
 
-        System.out.println("back to the filter, patrão -_-");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        User findUser = null;
+
+
+
+        for (User user : users) {
+
+            if (user.id == id) {
+
+                findUser = user;
+                break;
+            }
+        }
+
+        if (findUser !=null){
+
+            System.out.print("Digite o novo nome: ");
+
+            String newName = scanner.nextLine();
+
+            findUser.setName(newName);
+
+            System.out.println("Usuário editado UwU");
+
+        } else {
+            System.out.println("ACERTA O ID PORRA");
+        }
     }
 
     public void delete() {
         System.out.print("Digite o ID a ser pulverizado: ");
 
         int id = scanner.nextInt();
+        scanner.nextLine();
 
         User findUser = null;
+
+
 
         for (User user : users) {
 
@@ -85,6 +117,5 @@ public class Register {
         } else {
             System.out.println("ACERTA O ID PORRA");
         }
-
     }
 }

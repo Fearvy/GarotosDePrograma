@@ -7,9 +7,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Register register = new Register(scanner);
 
-        int opcao = -1;
+        int option = -1;
 
-        while (opcao !=0) {
+        while (option !=0) {
 
             System.out.println("=== SISTEMA DE CADASTRO ===");
             System.out.println("1 - Cadastrar");
@@ -19,11 +19,11 @@ public class Main {
             System.out.println("0 - Sair");
 
             System.out.print("Escolha uma opção: ");
-            opcao = scanner.nextInt();
+            option = scanner.nextInt();
+            scanner.nextLine();
 
-            switch (opcao) {
+            switch (option) {
                 case 1:
-                    scanner.nextLine();
                     register.signUp();
                     break;
 
