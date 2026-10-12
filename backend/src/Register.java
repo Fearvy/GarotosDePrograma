@@ -75,17 +75,28 @@ public class Register {
             }
         }
 
-        if (findUser !=null){
+        if (findUser !=null) {
 
-            System.out.print("Digite o novo nome: ");
+            System.out.print("Digite o novo nome(0 para cancelar): ");
 
             String newName = scanner.nextLine();
 
-            findUser.setName(newName);
+            if (newName.equals("0")) {
 
-            System.out.println("Usuário editado UwU");
+                System.out.println("Cancelando...");
+            }
+            else if (newName.isBlank()){
 
+                System.out.println("Nome inválido, seu analfabeto -_-");
+            }
+            else {
+
+                findUser.setName(newName);
+
+                System.out.println("Usuário editado UwU");
+            }
         } else {
+
             System.out.println("ACERTA O ID PORRA");
         }
     }
